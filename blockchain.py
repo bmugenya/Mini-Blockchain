@@ -12,3 +12,12 @@ class Blockchain:
         transactions = []
         previous_hash = 0
         self.chain.append(Block(transactions, previous_hash))
+
+    # add block to blockchain `chain`
+    def add_block(self, transactions):
+        transactions = transactions
+        prev_hash = self.chain[len(self.chain) - 1].hash
+
+        new_block = Block(transactions, prev_hash)
+
+        self.chain.append(new_block)
