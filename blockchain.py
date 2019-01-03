@@ -22,6 +22,12 @@ class Blockchain:
 
         self.chain.append(new_block)
 
+    # print contents of blockchain
+    def print_blocks(self):
+        for i in range(len(self.chain)):
+            current_block = self.chain[i]
+            print("Block %s %s" % (i, current_block))
+
     def validate_chain(self):
         for i in range(1, len(self.chain)):
             current = self.chain[i]
