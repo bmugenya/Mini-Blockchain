@@ -1,26 +1,10 @@
-# The transaction are best represented as dictionary, with keys for the required fields and values specific to the transaction.
+from blockchain import Blockchain
 
-transaction1 = {
-    'amount': '30',
-    'sender': 'Alice',
-    'reciever': 'Bob'
-}
+new_transactions = [{'amount': '30', 'sender': 'alice', 'receiver': 'bob'},
+                    {'amount': '55', 'sender': 'bob', 'receiver': 'alice'}]
 
-transaction2 = {
-    'amount': '200',
-    'sender': 'Bob',
-    'reciever': 'Alice'
-}
+my_blockchain = Blockchain()
 
-transaction3 = {
-    'amount': '300',
-    'sender': 'Alice',
-    'reciever': 'Timothy'
-}
+my_blockchain.add_block(new_transactions)
 
-# The transactions are all stored inside the mempool
-# A pool of transactions that miners reference when selecting the set of transactions they want to verify.
-
-mempool = [transaction1, transaction2, transaction3]
-
-block_transactions = [transaction1, transaction2, transaction3]
+print(my_blockchain.print_blocks)
